@@ -66,13 +66,12 @@ const siteData = {
     { label: "Hardware", value: "LiDAR, Cameras, IMU, GPS, Pixhawk, Jetson Nano, Realsense" }
   ],
   researchInterests: [
-    "Machine Learning",
     "Robotics",
+    "Machine Learning",
     "2D-3D Computer Vision",
-    "Motion Planning",
-    "State Estimation",
     "Computational Imaging",
-    "Embodied AI"
+    "Motion Planning",
+    "Large language and speech models",
   ],
   publications: [
     {
@@ -188,6 +187,8 @@ function renderIntro() {
     return `<a href="${l.url}"${target}>${l.label}</a>${sep}`;
   }).join("");
 
+  const tags = siteData.researchInterests.map(r => `<span class="interest-tag">${r}</span>`).join("");
+
   section.innerHTML = `<div class="container">
     <div class="intro-row">
       <div class="intro-photo">
@@ -197,6 +198,7 @@ function renderIntro() {
         <h1>${siteData.name}</h1>
         ${paragraphs}
         <div class="intro-links">${links}</div>
+        <div class="interests-list">${tags}</div>
       </div>
     </div>
   </div>`;
@@ -303,7 +305,6 @@ function buildHomePage() {
   const app = document.getElementById("app");
   app.appendChild(renderNav("home"));
   app.appendChild(renderIntro());
-  app.appendChild(renderResearchInterests());
   app.appendChild(renderEntrySection("education", "Education", siteData.education));
   app.appendChild(renderEntrySection("experience", "Work Experience", siteData.experience));
   app.appendChild(renderEntrySection("research", "Research Experience", siteData.research));

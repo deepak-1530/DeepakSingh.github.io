@@ -96,6 +96,7 @@ nav {
 .intro-links {
     margin-top: 16px;
     font-size: 15px;
+    text-align: center;
 }
 
 .intro-links a {
@@ -302,6 +303,8 @@ section h2 {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    justify-content: center;
+    margin-top: 12px;
 }
 
 .interest-tag {
